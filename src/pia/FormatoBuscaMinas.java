@@ -28,8 +28,30 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
     public FormatoBuscaMinas() 
     {
         initComponents();
+        juegoNuevo();
+    }
+    void descargaControles()
+    {
+        if(botones != null)
+        {
+            for(int i = 0 ; i < botones.length; i++)
+            {
+                for(int j  = 0; j < botones[i].length; j++)
+                {
+                    if(botones[i][j] != null)
+                    {
+                        getContentPane().remove(botones[i][j]);
+                    }
+                }
+            }
+        }
+    }
+    private void juegoNuevo()
+    {
+        descargaControles();
         cargaControles();
         crearTableroBuscaminas();
+        repaint();
     }
     private void crearTableroBuscaminas()
     {
@@ -120,7 +142,7 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         String[] coordenada = btn.getName().split(",");
         int posFila = Integer.parseInt(coordenada[0]);
         int posColumna = Integer.parseInt(coordenada[1]);
-        JOptionPane.showMessageDialog(rootPane, posFila+","+posColumna);
+        //JOptionPane.showMessageDialog(rootPane, posFila+","+posColumna);
         tableroBuscaMinas.seleccionarCasilla(posFila, posColumna);
     }
 
@@ -133,7 +155,52 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        NuevoJuego = new javax.swing.JMenuItem();
+        DificultadFacil = new javax.swing.JMenuItem();
+        DificultadMedia = new javax.swing.JMenuItem();
+        DificultadDificil = new javax.swing.JMenuItem();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jMenu1.setText("Juego");
+
+        NuevoJuego.setText("Nuevo");
+        NuevoJuego.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NuevoJuegoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(NuevoJuego);
+
+        DificultadFacil.setText("Facil");
+        DificultadFacil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DificultadFacilActionPerformed(evt);
+            }
+        });
+        jMenu1.add(DificultadFacil);
+
+        DificultadMedia.setText("Media");
+        DificultadMedia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DificultadMediaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(DificultadMedia);
+
+        DificultadDificil.setText("Dificil");
+        DificultadDificil.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DificultadDificilActionPerformed(evt);
+            }
+        });
+        jMenu1.add(DificultadDificil);
+
+        jMenuBar1.add(jMenu1);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -143,11 +210,36 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 277, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void NuevoJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoJuegoActionPerformed
+        juegoNuevo();
+    }//GEN-LAST:event_NuevoJuegoActionPerformed
+
+    private void DificultadDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadDificilActionPerformed
+        this.nFilas = 20;
+        this.nColumnas = 22;
+        this.nMinas = 60;
+        juegoNuevo();
+    }//GEN-LAST:event_DificultadDificilActionPerformed
+
+    private void DificultadMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadMediaActionPerformed
+        this.nFilas = 15;
+        this.nColumnas = 12;
+        this.nMinas = 35;
+        juegoNuevo();
+    }//GEN-LAST:event_DificultadMediaActionPerformed
+
+    private void DificultadFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadFacilActionPerformed
+        this.nFilas = 12;
+        this.nColumnas = 8;
+        this.nMinas = 15;
+        juegoNuevo();
+    }//GEN-LAST:event_DificultadFacilActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,5 +277,11 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem DificultadDificil;
+    private javax.swing.JMenuItem DificultadFacil;
+    private javax.swing.JMenuItem DificultadMedia;
+    private javax.swing.JMenuItem NuevoJuego;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

@@ -58,11 +58,14 @@ public class TableroBuscaMinas
         {
             int filaMina = (int)(Math.random()*casillasT.length);
             int columnaMina = (int)(Math.random()*casillasT[0].length);
-            if(!casillasT[filaMina][columnaMina].isMina())
+            do
             {
-                casillasT[filaMina][columnaMina].setMina(true);
-                minas++;
-            }
+                filaMina = (int)(Math.random()*casillasT.length);
+                columnaMina = (int)(Math.random()*casillasT[0].length);
+            }while((filaMina == posFilaI && columnaMina == posColumnaI));
+            
+            casillasT[filaMina][columnaMina].setMina(true);
+            minas++;
         }
         actualizarNumeroMinasAlrededor();
         this.generacionMinas = true;
