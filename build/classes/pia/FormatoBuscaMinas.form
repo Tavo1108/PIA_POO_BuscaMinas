@@ -9,14 +9,6 @@
             <Property name="text" type="java.lang.String" value="Juego"/>
           </Properties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="NuevoJuego">
-              <Properties>
-                <Property name="text" type="java.lang.String" value="Nuevo"/>
-              </Properties>
-              <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="NuevoJuegoActionPerformed"/>
-              </Events>
-            </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="DificultadFacil">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Facil"/>

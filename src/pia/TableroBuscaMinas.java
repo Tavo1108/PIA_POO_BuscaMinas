@@ -20,6 +20,7 @@ public class TableroBuscaMinas
     int nColumnas;
     int nMinas;
     
+    
     int numCasillasAbiertas;
     boolean generacionMinas;
     
@@ -34,6 +35,8 @@ public class TableroBuscaMinas
         this.nMinas = nMinas;
         this.inicializacionCasillas();
         this.generacionMinas = false;
+        
+       
     }
     
     public void inicializacionCasillas()
@@ -69,6 +72,19 @@ public class TableroBuscaMinas
         }
         actualizarNumeroMinasAlrededor();
         this.generacionMinas = true;
+    }
+    
+    public List<Casillas> obtenerTodasLasCasillas() 
+    {
+        List<Casillas> todas = new LinkedList<>();
+        for (int i = 0; i < casillasT.length; i++) 
+        {
+            for (int j = 0; j < casillasT[i].length; j++) 
+            {
+                todas.add(casillasT[i][j]);
+            }
+        }
+        return todas;
     }
     
     public void imprimirTablero()
@@ -184,6 +200,7 @@ public class TableroBuscaMinas
     }
     public void seleccionarCasilla(int posicionF, int posicionC)
     {
+        
         if(!this.generacionMinas)
         {
             this.generadorMinas(posicionF, posicionC);
@@ -192,6 +209,7 @@ public class TableroBuscaMinas
         if(this.casillasT[posicionF][posicionC].isMina())
         {
             partidaPerdida.accept(obtenerCasillasConMinas());
+            
         }
         else if(this.casillasT[posicionF][posicionC].getnMinasAlrededor() == 0)
         {
@@ -226,6 +244,8 @@ public class TableroBuscaMinas
     {
         return numCasillasAbiertas >= (nFilas*nColumnas)-nMinas;
     }
+    
+   
     public static void main(String[] args)
     {
         TableroBuscaMinas tablero = new TableroBuscaMinas(16,20, 15);
@@ -248,5 +268,6 @@ public class TableroBuscaMinas
     {
         this.eventoPartidaGanada = eventoPartidaGanada;
     }
+    
     
 }

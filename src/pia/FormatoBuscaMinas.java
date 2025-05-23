@@ -11,6 +11,8 @@ import java.util.function.Consumer;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+
+
 /**
  *
  * @author 52811
@@ -65,6 +67,13 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
                 {
                     botones[casillasMinas.getPosicionF()][casillasMinas.getPosicionC()].setText("*");
                 }
+                for(int i = 0 ; i < botones.length ; i++)
+                {
+                    for(int j = 0 ; j < botones[i].length ; j++)
+                    {
+                        botones[i][j].setEnabled(false);
+                    }
+                }
             }
         });
         
@@ -92,6 +101,9 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
                 botones[t.getPosicionF()][t.getPosicionC()].setText(t.getnMinasAlrededor()==0?"":t.getnMinasAlrededor()+"");
             }
         });
+        
+            
+        
     }
     private void cargaControles()
     {
@@ -145,6 +157,7 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         //JOptionPane.showMessageDialog(rootPane, posFila+","+posColumna);
         tableroBuscaMinas.seleccionarCasilla(posFila, posColumna);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -157,7 +170,6 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
 
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        NuevoJuego = new javax.swing.JMenuItem();
         DificultadFacil = new javax.swing.JMenuItem();
         DificultadMedia = new javax.swing.JMenuItem();
         DificultadDificil = new javax.swing.JMenuItem();
@@ -165,14 +177,6 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jMenu1.setText("Juego");
-
-        NuevoJuego.setText("Nuevo");
-        NuevoJuego.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NuevoJuegoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(NuevoJuego);
 
         DificultadFacil.setText("Facil");
         DificultadFacil.addActionListener(new java.awt.event.ActionListener() {
@@ -216,28 +220,24 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void NuevoJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuevoJuegoActionPerformed
-        juegoNuevo();
-    }//GEN-LAST:event_NuevoJuegoActionPerformed
-
     private void DificultadDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadDificilActionPerformed
-        this.nFilas = 20;
-        this.nColumnas = 22;
-        this.nMinas = 60;
+        this.nFilas = 15;
+        this.nColumnas = 15;
+        this.nMinas = 40;
         juegoNuevo();
     }//GEN-LAST:event_DificultadDificilActionPerformed
 
     private void DificultadMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadMediaActionPerformed
-        this.nFilas = 15;
-        this.nColumnas = 12;
-        this.nMinas = 35;
+        this.nFilas = 13;
+        this.nColumnas = 13;
+        this.nMinas = 25;
         juegoNuevo();
     }//GEN-LAST:event_DificultadMediaActionPerformed
 
     private void DificultadFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadFacilActionPerformed
-        this.nFilas = 12;
-        this.nColumnas = 8;
-        this.nMinas = 15;
+        this.nFilas = 10;
+        this.nColumnas = 10;
+        this.nMinas = 10;
         juegoNuevo();
     }//GEN-LAST:event_DificultadFacilActionPerformed
 
@@ -280,7 +280,6 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
     private javax.swing.JMenuItem DificultadDificil;
     private javax.swing.JMenuItem DificultadFacil;
     private javax.swing.JMenuItem DificultadMedia;
-    private javax.swing.JMenuItem NuevoJuego;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
