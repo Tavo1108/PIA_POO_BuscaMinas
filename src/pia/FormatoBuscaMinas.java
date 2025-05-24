@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
 
 /**
  *
- * @author 52811
+ * Gustavo Arreola Almaguer 2074164
  */
 public class FormatoBuscaMinas extends javax.swing.JFrame 
 {
@@ -230,20 +230,20 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
     private void DificultadDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadDificilActionPerformed
         this.nFilas = 18;
         this.nColumnas = 19;
-        this.nMinas = 35;
+        this.nMinas = 30;
         juegoNuevo();
     }//GEN-LAST:event_DificultadDificilActionPerformed
 
     private void DificultadMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadMediaActionPerformed
         this.nFilas = 14;
         this.nColumnas = 15;
-        this.nMinas = 22;
+        this.nMinas = 20;
         juegoNuevo();
     }//GEN-LAST:event_DificultadMediaActionPerformed
 
     private void DificultadFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadFacilActionPerformed
-        this.nFilas = 11;
-        this.nColumnas = 11;
+        this.nFilas = 12;
+        this.nColumnas = 12;
         this.nMinas = 10;
         juegoNuevo();
     }//GEN-LAST:event_DificultadFacilActionPerformed

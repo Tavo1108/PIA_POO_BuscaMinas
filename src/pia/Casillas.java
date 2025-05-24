@@ -6,7 +6,7 @@ package pia;
 
 /**
  *
- * @author 52811
+ * Gustavo Arreola Almaguer 2074164
  */
 public class Casillas 
 {

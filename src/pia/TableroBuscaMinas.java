@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author 52811
+ * Gustavo Arreola Almaguer 2074164
  */
 public class TableroBuscaMinas 
 { 
