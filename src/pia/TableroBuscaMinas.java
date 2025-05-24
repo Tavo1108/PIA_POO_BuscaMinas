@@ -87,7 +87,7 @@ public class TableroBuscaMinas
         return todas;
     }
     
-    public void imprimirTablero()
+    /*public void imprimirTablero()
     {
         for(int i = 0 ; i < casillasT.length ; i++)
         {
@@ -115,7 +115,7 @@ public class TableroBuscaMinas
             System.out.println();
         }
         
-    }
+    }*/
     
     private void actualizarNumeroMinasAlrededor()
     {
@@ -144,32 +144,38 @@ public class TableroBuscaMinas
             
             switch(i)
             {
-                case 0:
+                case 0: //Arriba
                     filaMina--;
                     break;
                     
-                case 1:
+                case 1: //Arriba Derecha
                     filaMina--;
                     columnaMina++;
                     break;
-                case 2: 
+                    
+                case 2: //Derecha
                     columnaMina++;
                     break;
-                case 3:
+                    
+                case 3: //Derecha Abajo
                     columnaMina++;
                     filaMina++;
                     break;
-                case 4:
+                    
+                case 4: //Abajo
                     filaMina++;
                     break;
-                case 5:
+                    
+                case 5: //Izquierda Abajo
                     filaMina++;
                     columnaMina--;
                     break;
-                case 6:
+                    
+                case 6: //Izquierda 
                     columnaMina--;
                     break;
-                case 7:
+                    
+                case 7: // Izquierda Arriba
                     filaMina--;
                     columnaMina--;
                     break;  
@@ -248,10 +254,10 @@ public class TableroBuscaMinas
    
     public static void main(String[] args)
     {
-        TableroBuscaMinas tablero = new TableroBuscaMinas(16,20, 15);
+        /*TableroBuscaMinas tablero = new TableroBuscaMinas(16,20, 15);
         tablero.imprimirTablero();
         System.out.print("---\n");
-        tablero.imprimirPistas();
+        tablero.imprimirPistas();*/
     }
     
     public void setPartidaPerdida(Consumer<List<Casillas>> partidaPerdida)
@@ -260,7 +266,8 @@ public class TableroBuscaMinas
     }
 
     
-    public void setCasillaAbierta(Consumer<Casillas> casillaAbierta) {
+    public void setCasillaAbierta(Consumer<Casillas> casillaAbierta) 
+    {
         this.casillaAbierta = casillaAbierta;
     }
     

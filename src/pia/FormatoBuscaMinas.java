@@ -77,7 +77,7 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
             }
         });
         
-        tableroBuscaMinas.imprimirTablero();
+        //  tableroBuscaMinas.imprimirTablero();
         
         
         
@@ -89,6 +89,13 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
                 for(Casillas casillasMinas: t)
                 {
                     botones[casillasMinas.getPosicionF()][casillasMinas.getPosicionC()].setText(":)");
+                }
+                for(int i = 0 ; i < botones.length ; i++)
+                {
+                    for(int j = 0 ; j < botones[i].length ; j++)
+                    {
+                        botones[i][j].setEnabled(false);
+                    }
                 }
             }
         });
@@ -154,7 +161,7 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         String[] coordenada = btn.getName().split(",");
         int posFila = Integer.parseInt(coordenada[0]);
         int posColumna = Integer.parseInt(coordenada[1]);
-        //JOptionPane.showMessageDialog(rootPane, posFila+","+posColumna);
+      //JOptionPane.showMessageDialog(rootPane, posFila+","+posColumna);
         tableroBuscaMinas.seleccionarCasilla(posFila, posColumna);
     }
     
@@ -210,33 +217,33 @@ public class FormatoBuscaMinas extends javax.swing.JFrame
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 500, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 277, Short.MAX_VALUE)
+            .addGap(0, 484, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void DificultadDificilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadDificilActionPerformed
-        this.nFilas = 15;
-        this.nColumnas = 15;
-        this.nMinas = 40;
+        this.nFilas = 18;
+        this.nColumnas = 19;
+        this.nMinas = 35;
         juegoNuevo();
     }//GEN-LAST:event_DificultadDificilActionPerformed
 
     private void DificultadMediaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadMediaActionPerformed
-        this.nFilas = 13;
-        this.nColumnas = 13;
-        this.nMinas = 25;
+        this.nFilas = 14;
+        this.nColumnas = 15;
+        this.nMinas = 22;
         juegoNuevo();
     }//GEN-LAST:event_DificultadMediaActionPerformed
 
     private void DificultadFacilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DificultadFacilActionPerformed
-        this.nFilas = 10;
-        this.nColumnas = 10;
+        this.nFilas = 11;
+        this.nColumnas = 11;
         this.nMinas = 10;
         juegoNuevo();
     }//GEN-LAST:event_DificultadFacilActionPerformed
